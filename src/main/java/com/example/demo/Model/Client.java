@@ -23,7 +23,7 @@ import javax.persistence.Table;
 
 public class Client {
 
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
     private String email;
@@ -31,13 +31,13 @@ public class Client {
     private String name;
     private Integer age;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
-    public List<Message>messages;
+    public List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
-    public List<Reservation>reservations;
+    public List<Reservation> reservations;
 
     public Integer getIdClient() {
         return idClient;
@@ -94,7 +94,5 @@ public class Client {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-    
-    
 
 }
