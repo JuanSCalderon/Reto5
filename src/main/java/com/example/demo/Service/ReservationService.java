@@ -68,6 +68,12 @@ public class ReservationService {
                 if(reservation.getStatus()!=null){
                     e.get().setStatus(reservation.getStatus());
                 }
+                if(reservation.getClient()!=null){
+                    e.get().setClient(reservation.getClient());
+                }
+                if(reservation.getCar()!=null){
+                    e.get().setCar(reservation.getCar());
+                }
                 reservationRepository.save(e.get());
                 return e.get();
             }else{

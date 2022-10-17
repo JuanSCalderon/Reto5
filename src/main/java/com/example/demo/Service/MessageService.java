@@ -56,6 +56,12 @@ public class MessageService {
                 if(message.getMessageText()!=null){
                     e.get().setMessageText(message.getMessageText());
                 }
+                if(message.getClient()!=null){
+                    e.get().setClient(message.getClient());
+                }
+                if(message.getCar()!=null){
+                    e.get().setCar(message.getCar());
+                }
                 messageRepository.save(e.get());
                 return e.get();
             }else{
